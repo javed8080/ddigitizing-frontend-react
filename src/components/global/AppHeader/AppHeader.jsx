@@ -9,12 +9,13 @@ const AppHeader = () => {
   const location = useLocation();
 
   const [navItems, setNavItems] = useState([
-    { name: 'Client Area Home', slug: '/products', active: false },
-    { name: 'Digitizing', slug: '/shop', active: false },
-    { name: 'Patches', slug: '/shop', active: false },
-    { name: 'Vector', slug: '/shop', active: false },
-    { name: 'My Account', slug: '/shop', active: false },
-    { name: 'Contact Us', slug: '/shop', active: false },
+    { name: 'Home', slug: '/', active: false },
+    { name: 'Client Area Home', slug: '/client-home', active: false },
+    { name: 'Digitizing', slug: '/digitizing', active: false },
+    { name: 'Patches', slug: '/patches', active: false },
+    { name: 'Vector', slug: '/vector', active: false },
+    { name: 'My Account', slug: '/my-account', active: false },
+    { name: 'Contact Us', slug: '/contact-us', active: false },
 
   ]);
 

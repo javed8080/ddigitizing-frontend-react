@@ -1,14 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { Fragment, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { Customize, Customizer, Color, Pattern, Image, LayoutType, RTLLayout, LTRLayout, SidebarBackgroundSetting, PreviewRealTime, CopyText, ModalTitle, SidebarType, Default, Border, IconColor, DarkLayout, MixLayout, LightLayout, Cancel, Configuration, SidebarSettings } from '../../constant'
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
+import { Border, Cancel, Color, Configuration, CopyText, Customize, Customizer, DarkLayout, Default, IconColor, Image, LayoutType, LightLayout, LTRLayout, MixLayout, ModalTitle, Pattern, PreviewRealTime, RTLLayout, SidebarBackgroundSetting, SidebarSettings, SidebarType } from '../../constant';
 
 const ThemeCustomizer = () => {
 
-    const primary_color = localStorage.getItem('primary_color');
+    const primary_color = "#000";
     const secondary_color = localStorage.getItem('secondary_color');
     const layout_version = localStorage.getItem('layout_version');
     const sidebar_type = localStorage.getItem('wrapper')
@@ -30,17 +29,17 @@ const ThemeCustomizer = () => {
     configDB.settings.sidebar.bodyWrapper = body_sidebar_type;
 
     useEffect(() => {
-        dispatch({ type: 'ADD_COSTOMIZER' });
+        // dispatch({ type: 'ADD_COSTOMIZER' });
 
-        dispatch({
-            type: 'ADD_COLOR',
-            payload: {
-                color,
-                primary_color,
-                secondary_color,
-                layout_version,
-            }
-        })
+        // dispatch({
+        //     type: 'ADD_COLOR',
+        //     payload: {
+        //         color,
+        //         primary_color,
+        //         secondary_color,
+        //         layout_version,
+        //     }
+        // })
 
         //set layout_type
         document.body.setAttribute('main-theme-layout', layout_type);
@@ -68,15 +67,15 @@ const ThemeCustomizer = () => {
             localStorage.setItem('secondary_color', config_secondary);
             localStorage.setItem('color', config_color);
             localStorage.setItem('layout_version', config_layout_version)
-            dispatch({
-                type: 'ADD_COLOR',
-                payload: {
-                    color: config_color,
-                    primary_color: config_primary,
-                    secondary_color: config_secondary,
-                    layout_version: config_layout_version
-                }
-            })
+            // dispatch({
+            //     type: 'ADD_COLOR',
+            //     payload: {
+            //         color: config_color,
+            //         primary_color: config_primary,
+            //         secondary_color: config_secondary,
+            //         layout_version: config_layout_version
+            //     }
+            // })
         }
 
         if (sidebar_type === 'compact-wrapper' || configDB.settings.sidebar.wrapper === 'compact-wrapper') {
