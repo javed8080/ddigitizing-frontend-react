@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserLayout from "../components/layout/UserLayout";
 import ClientHome from "../pages/user/ClientHome";
 import Digitizing from "../pages/user/Digitizing";
-import Home from "../pages/user/Home";
+import Home from "../pages/Home";
 import Patches from "../pages/user/Patches";
 import Vector from "../pages/user/Vector";
 
@@ -33,7 +33,7 @@ const MainRoutes = () => {
         
           <Routes>
           <Route path={``} element={<UserLayout />}>
-              <Route exact path="" element={<Home />} />
+              <Route exact path="/" element={<Home />} />
               <Route exact path="digitizing" element={<Digitizing />} />
               <Route exact path="vector" element={<Vector />} />
               <Route exact path="patches" element={<Patches />} />

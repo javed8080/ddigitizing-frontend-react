@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { FormProvider, useForm } from 'react-hook-form';
-import { Form } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
 import CustomInputField from '../components/global/CustomInputField/CustomInputField';
+import CustomDropzone from './../components/global/CustomInputField/CustomDropzone';
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
             <FormProvider {...methods}>
                 <Form onSubmit={methods.handleSubmit(onSubmit)} className="login-form-container">
 
+                    <CustomDropzone />
                     <div className="mb-4">
                         <CustomInputField
                             label="First name"
